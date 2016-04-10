@@ -1,0 +1,1087 @@
+import java.io.*;    //importing input output package
+
+class calculator   //class declaration
+
+{                  //opening brace of class
+
+   static InputStreamReader in=new InputStreamReader(System.in);//creating object
+
+    static BufferedReader bin=new BufferedReader(in);//linking object of InputStreamReader to object of BufferedReader
+
+    static double n,sum=0,n1,n2,res,res1,product=1;   //variable description
+
+    int num,c=0,dec=0,rem=0,rev=0,i,binary=0,a;  //variable description
+
+       static int choice;
+
+       static calculator ob =new calculator();
+
+   public static void main(String args[])throws IOException //method declaration
+
+    { 
+
+        System.out.println("Which calculator you want to use");
+
+        System.out.println("1-Simple calculator");
+
+        System.out.println("2-Scientific calculator");
+
+        System.out.println("Enter your choice");
+
+        int ch=Integer.parseInt(bin.readLine());
+
+        if(ch==1)
+
+        {
+
+         do
+
+            {
+
+                System.out.println("You are using Simple calculator");
+
+                System.out.println("============================");
+
+                System.out.println("         Main menu          ");
+
+                System.out.println("============================");
+
+                System.out.println("     1-Addition");              
+
+                System.out.println("     2-Subtraction");         
+
+                System.out.println("     3-Multiplication");       
+
+                System.out.println("     4-Division");           
+
+                System.out.println("     5-Remainder");                             
+
+                System.out.println("     6-M+");
+
+                System.out.println("     7-M-");
+
+                System.out.println("     8-M=");
+
+                System.out.println("     9-Exit");
+
+                System.out.println("============================");
+
+                System.out.println("     Enter your choice");
+
+                System.out.println("============================");
+
+                choice=Integer.parseInt(bin.readLine());
+
+                switch(choice)
+
+                {
+
+                    case 1:
+
+                            ob.addition();
+
+                            break;
+
+                    case 2:
+
+                            ob.subtraction();
+
+                            break;
+
+                     case 3:
+
+                            ob.multiplication();
+
+                            break;
+
+                     case 4:
+
+                           ob.divide();
+
+                           break; 
+
+                     case 5:
+
+                            ob.remaindar();
+
+                            break;
+
+                     case 6:
+
+                            ob.M_add();
+
+                            break;
+
+                     case 7:
+
+                            ob.M_sub();
+
+                            break;
+
+                     case 8:
+
+                            ob.M_equal();
+
+                            break;      
+
+                     case 9:
+
+                            System.out.println("Thanks for using calculator");
+
+                            break;
+
+                     default:
+
+                            System.out.println("Wrong Choice");
+
+                  }      
+
+                }
+
+                while(choice<9);
+
+              }
+
+     else if(ch==2)
+
+       {
+
+          do
+
+              {
+
+                  System.out.println("You are using Scientific calculator");
+
+                  System.out.println("\t\t\t Main Menu");
+
+                  System.out.println("1-To Find sine of a number");
+
+                  System.out.println("2-To Find cosine of a number");
+
+                  System.out.println("3-To Find tangent of a number");
+
+                  System.out.println("4-To Find cotangent of a number");
+
+                  System.out.println("5-To Find secant of a number");
+
+                  System.out.println("6-To Find cosecant of a number");
+
+                  System.out.println("7-To Find natural Logarithm of a number");
+
+                  System.out.println("8-To Find power");
+
+                  System.out.println("9-To Find square root of a number");
+
+                  System.out.println("10-To Find exponent of a number");
+
+                  System.out.println("11-To convert Decimal number to its Binary Equivalent");
+
+                  System.out.println("12-To convert Binary number to its Decimal Equivalent");
+
+                  System.out.println("13-To check number is prime or not");
+
+                  System.out.println("14-To check number is composite or not");
+
+                  System.out.println("15-To check number is palindrome or not");
+
+                  System.out.println("16-To check number is armstrong or not");
+
+                  System.out.println("17-To check number is automorphic or not");
+
+                  System.out.println("18-To find factorial value of a number");
+
+                  System.out.println("19-Sin inverse");
+
+                  System.out.println("20-Cos inverse");
+
+                  System.out.println("21-Tan inverse");
+
+                  System.out.println("22-Square");
+
+                  System.out.println("23-Log");
+
+                  System.out.println("24-Antilog");
+
+                  System.out.println("25-Inverse of x");
+
+                  System.out.println("26-OR");
+
+                  System.out.println("27-AND");
+
+                  System.out.println("28-M+");
+
+                  System.out.println("29-M-");
+
+                  System.out.println("30-M=");
+
+                  System.out.println("31-Exit");
+
+                  System.out.println("Enter your choice");
+
+                     choice=Integer.parseInt(bin.readLine());
+
+                         switch(choice)
+
+                            {
+
+                                case 1:
+
+                                       ob.sine();
+
+                                       break;                                                             
+
+                                case 2:
+
+                                       ob.cose();
+
+                                       break; 
+
+                                case 3:  
+
+                                       ob.tane();
+
+                                       break;      
+
+                                case 4:
+
+                                        ob.cota();
+
+                                        break;
+
+                                case 5:
+
+                                        ob.sec();                             
+
+                                        break;
+
+                                case 6:
+
+                                        ob.cosec();
+
+                                        break;   
+
+                                case 7:
+
+                                        ob.logn();
+
+                                        break;
+
+                                case 8:
+
+                                        ob.power();
+
+                                        break;
+
+                                case 9:
+
+                                        ob.sqrtt();    
+
+                                        break;
+
+                                case 10:
+
+                                        ob.expt();   
+
+                                        break;
+
+                                case 11:
+
+                                        ob.bintodec();
+
+                                        break;
+
+                                 case 12:
+
+                                         ob.dectobin();
+
+                                         break;
+
+                                 case 13:
+
+                                         ob.prime();
+
+                                         break;
+
+                                 case 14:
+
+                                         ob.composite();
+
+                                         break;    
+
+                                 case 15:
+
+                                         ob.palindrome();
+
+                                         break;    
+
+                                  case 16:
+
+                                         ob.armstrong();
+
+                                         break;
+
+                                 case 17:
+
+                                         ob.automorphic();
+
+                                         break;         
+
+                                  case 18:
+
+                                         ob.factorial();
+
+                                         break;
+
+                                 case 19:
+
+                                         ob.sin_inverse();
+
+                                         break;
+
+                                 case 20:
+
+                                         ob.cos_inverse();
+
+                                         break;
+
+                                 case 21:
+
+                                         ob.tan_inverse();
+
+                                         break;
+
+                                 case 22:
+
+                                        ob.square();
+
+                                         break;
+
+                                 case 23:
+
+                                         ob.log_x();
+
+                                         break;
+
+                                 case 24:
+
+                                         ob.antilog();
+
+                                         break;
+
+                                 case 25:
+
+                                         ob.inverse();
+
+                                         break;
+
+                                 case 26:
+
+                                         ob.or();
+
+                                         break;
+
+                                 case 27:
+
+                                        ob.and();
+
+                                        break;
+
+                                 case 28:
+
+                                        ob.M_add();
+
+                                        break;
+
+                                 case 29:
+
+                                        ob.M_sub();
+
+                                        break;
+
+                                 case 30:
+
+                                        ob.M_equal();
+
+                                        break;
+
+                                 case 31:
+
+                                        System.out.println("Thanks for using calculator");
+
+                                        break;
+
+                                 default:
+
+                                         System.out.println("Wrong Choice");
+
+                             }
+
+                     }
+
+                       while(choice<31);
+
+              }
+
+         }
+
+                   public void addition()throws IOException
+
+                    {
+
+                      do
+
+                         {
+
+                           System.out.println("Enter number press 0 to terminate");
+
+                           n=Double.parseDouble(bin.readLine());
+
+                           sum=sum+n;
+
+                           res=sum;
+
+                         }
+
+                      while(n!=0);
+
+                          System.out.println("Result="+sum);
+
+                   }
+
+                  public void subtraction()throws IOException
+
+                   {
+
+                     System.out.println("Enter first number");
+
+                     n1=Double.parseDouble(bin.readLine());
+
+                     System.out.println("Enter second number");
+
+                     n2=Double.parseDouble(bin.readLine());
+
+                     res=n1-n2;
+
+                     System.out.println("Result="+res);
+
+                    }
+
+                   public void multiplication()throws IOException
+
+                    {
+
+                      do
+
+                        {
+
+                          System.out.println("Enter number press 0 to terminate");
+
+                          n=Double.parseDouble(bin.readLine());
+
+                          if(n>0)
+
+                          product=product*n;
+
+                          res=product;
+
+                        }
+
+                      while(n!=0);
+
+                          System.out.println("Result="+product);
+
+                    }
+
+                   public void divide()throws IOException
+
+                    {
+
+                      System.out.println("Enter first number");
+
+                      n1=Double.parseDouble(bin.readLine());
+
+                      System.out.println("Enter second number");
+
+                      n2=Double.parseDouble(bin.readLine());
+
+                      res=n1/n2;
+
+                      System.out.println("Result="+res);
+
+                    }
+
+                   public void remaindar()throws IOException
+
+                    {
+
+                      System.out.println("Enter first number");
+
+                      n1=Double.parseDouble(bin.readLine());
+
+                      System.out.println("Enter second number");
+
+                      n2=Double.parseDouble(bin.readLine());
+
+                      res=n1%n2;
+
+                      System.out.println("Result="+res);
+
+                    }
+
+                   public void sine()throws IOException
+
+                    {
+
+                      System.out.println("Enter the Angle");
+
+                      n=Double.parseDouble(bin.readLine());
+
+                      res=Math.sin(n);
+
+                      System.out.println("Result="+res);
+
+                    }
+
+                   public void cose()throws IOException
+
+                    {
+
+                     System.out.println("Enter the Angle");
+
+                     n=Double.parseDouble(bin.readLine());
+
+                     res=Math.cos(n);
+
+                     System.out.println("Result="+res);
+
+                    }
+
+                   public void tane()throws IOException
+
+                    {
+
+                     System.out.println("Enter the Angle");
+
+                     n=Double.parseDouble(bin.readLine());
+
+                     res=Math.tan(n);
+
+                     System.out.println("Result="+res);
+
+                    }
+
+                   public void cota()throws IOException
+
+                    {
+
+                      System.out.println("Enter the Angle");
+
+                      n=Double.parseDouble(bin.readLine());
+
+                      res=1/Math.tan(n);
+
+                      System.out.println("Result="+res);
+
+                    }
+
+                   public void sec()throws IOException
+
+                    {
+
+                      System.out.println("Enter the Angle");
+
+                      n=Double.parseDouble(bin.readLine());
+
+                      res=1/Math.cos(n);
+
+                      System.out.println("Result="+res);
+
+                    }
+
+                   public void cosec()throws IOException
+
+                    {
+
+                      System.out.println("Enter the Angle");
+
+                      n=Double.parseDouble(bin.readLine());
+
+                      res=1/Math.sin(n);
+
+                      System.out.println("Result="+res);
+
+                    }
+
+                   public void logn()throws IOException
+
+                    {
+
+                      System.out.println("Enter the Angle");
+
+                      n=Double.parseDouble(bin.readLine());
+
+                      res=Math.log(n);
+
+                      System.out.println("Result="+res);
+
+                    }   
+
+                   public void power()throws IOException
+
+                    {
+
+                      System.out.println("Enter the base");
+
+                      n1=Double.parseDouble(bin.readLine());
+
+                      System.out.println("Enter the exponent");
+
+                      n2=Double.parseDouble(bin.readLine());
+
+                      res=Math.pow(n1,n2);
+
+                      System.out.println("Result="+res);
+
+                    }
+
+                   public void sqrtt()throws IOException
+
+                    {
+
+                      System.out.println("Enter the Number");
+
+                      n=Double.parseDouble(bin.readLine());
+
+                      res=Math.sqrt(n);
+
+                      System.out.println("Result="+res);
+
+                    }
+
+                   public void expt()throws IOException
+
+                    {
+
+                      System.out.println("Enter the Number");
+
+                      n=Double.parseDouble(bin.readLine());
+
+                      res=Math.exp(n);
+
+                      System.out.println("Result="+res);
+
+                    }
+
+                   public void bintodec()throws IOException
+
+                    {
+
+                      System.out.println("Enter the Decimal number");
+
+                      num=Integer.parseInt(bin.readLine());
+
+                       while(num>0)
+
+                        {
+
+                           binary=binary+(int)Math.pow(10,c)*(num%2);
+
+                           num=num/2;
+
+                           c++;
+
+                        }
+
+                       System.out.println("Binary Equivalent="+binary);
+
+                       res=binary;
+
+                    }
+
+                   public void dectobin()throws IOException
+
+                    {
+
+                      System.out.println("Enter the Binary number");
+
+                      num=Integer.parseInt(bin.readLine());
+
+                       while(num>0)
+
+                        {
+
+                          rem=num%10;
+
+                          dec=dec+(int)Math.pow(2,c);
+
+                          num=num/10;
+
+                          c++;
+
+                        }
+
+                       System.out.println("Decimal Equivalent="+dec);
+
+                       res=dec;
+
+                    }         
+
+                   public void prime()throws IOException
+
+                    {
+
+                      System.out.println("Enter the number");
+
+                      num=Integer.parseInt(bin.readLine());
+
+                      for(i=1;i<=num;i++)
+
+                       {
+
+                          if(num%i==0)
+
+                              c++;
+
+                       }
+
+                        if(c<=2)
+
+                          System.out.println("Number is prime");
+
+                        else
+
+                          System.out.println("Number is not prime");
+
+                          res=num;
+
+                    }
+
+                   public void composite()throws IOException
+
+                    {
+
+                      System.out.println("Enter the number");
+
+                      num=Integer.parseInt(bin.readLine());
+
+                      for(i=1;i<=num;i++)
+
+                       {
+
+                         if(num%i==0)
+
+                               c++;
+
+                       }
+
+                        if(c>2)
+
+                          System.out.println("Number is composite");
+
+                        else
+
+                          System.out.println("Number is not composite");
+
+                      res=num;
+
+                        }
+
+                   public void palindrome()throws IOException
+
+                    {
+
+                      System.out.println("Enter the number");
+
+                      num=Integer.parseInt(bin.readLine());
+
+                      a=num;
+
+                        while(num>0)
+
+                         {
+
+                           rem=num%10;
+
+                           rev=rev*10+rem;
+
+                           num=num/10;
+
+                          }
+
+                         if(rev==a)
+
+                           System.out.println("Number is palindrome");
+
+                         else
+
+                           System.out.println("Number is not palindrome");
+
+                         res=a;
+
+                        }            
+
+                   public void armstrong()throws IOException
+
+                    {
+
+                      System.out.println("Enter the number");
+
+                      num=Integer.parseInt(bin.readLine());
+
+                      a=num;int cube=0;sum=0;
+
+                       while(num>0)
+
+                        {
+
+                          rem=num%10;
+
+                          cube=rem*rem*rem;
+
+                          sum=sum+cube;
+
+                          num=num/10;
+
+                        }
+
+                       if(sum==a)
+
+                         System.out.println("Number is armstrong");
+
+                       else
+
+                         System.out.println("Number is not armstrong");
+
+                         res=a;
+
+                        }
+
+                   public void automorphic()throws IOException
+
+                    {
+
+                      System.out.println("Enter the number");
+
+                      num=Integer.parseInt(bin.readLine());
+
+                      res=num;
+
+                      int sq=num*num,p=0,q=0,f=0;
+
+                       while(num>0)
+
+                        {
+
+                         p=num%10;
+
+                         q=sq%10;
+
+                                   if(p!=q)
+
+                                    {
+
+                                      f=1;
+
+                                      break;
+
+                                    }
+
+                         num=num/10;
+
+                         sq=sq/10;
+
+                        }
+
+                         if(f==0)
+
+                           System.out.println("Number is automorphic");
+
+                         else
+
+                           System.out.println("Number is not automorphic"); 
+
+                    }
+
+                   public void factorial()throws IOException
+
+                    {
+
+                      System.out.println("Enter the number");
+
+                      num=Integer.parseInt(bin.readLine());
+
+                      int fact=1;a=1;
+
+                        while(a<=num)
+
+                         {
+
+                           fact=fact*a;
+
+                           a++;
+
+                         }
+
+                        System.out.println("Factorial value="+fact);
+
+                    res=fact;
+
+                    }
+
+                   public void sin_inverse()throws IOException
+
+                   {
+
+                      System.out.println("Enter The Angle In Radians");
+
+                       n=Double.parseDouble(bin.readLine());
+
+                        res = Math.asin(n);
+
+                        System.out.println("Sin Inverse Of "+n+"="+res);
+
+                    }
+
+                    public void cos_inverse()throws IOException
+
+                    {
+
+                     System.out.println("Enter The Angle In Radians");
+
+                       n=Double.parseDouble(bin.readLine());
+
+                      res = Math.acos(n);
+
+          System.out.println("Cos Inverse Of "+n+"="+res);
+
+         }
+
+                       public void tan_inverse()throws IOException
+
+                       {
+
+                         System.out.println("Enter The Angle In Radians");
+
+                       n=Double.parseDouble(bin.readLine());
+
+                        res = Math.atan(n);
+
+           System.out.println("Tan Inverse Of"+n+"="+res);
+
+         }
+
+          public void square()throws IOException
+
+          {
+
+           System.out.println("Enter The Number");
+
+              n=Double.parseDouble(bin.readLine());
+
+            res=n*n;
+
+          System.out.println("Square Of"+n+"="+res);
+
+        }
+
+        public void log_x()throws IOException
+
+        {
+
+           System.out.println("Enter The Number");
+
+              n=Double.parseDouble(bin.readLine());
+
+           double r1=Math.log(n);
+
+         res=r1/2.3035851d;
+
+         System.out.println("Value Is"+res);
+
+         }
+
+         public void antilog()throws IOException
+
+         {
+
+           System.out.println("Enter The Number");
+
+              n=Double.parseDouble(bin.readLine());
+
+              res = Math.pow(10,n);
+
+           System.out.println("Value Is ="+res);
+
+              }
+
+         public void inverse()throws IOException  
+
+         {
+
+           System.out.println("Enter The Number");
+
+               n=Double.parseDouble(bin.readLine());
+
+              res =  1/n;
+
+            System.out.println("Value Is" +res);
+
+            }
+
+           public void or()throws IOException  
+
+         {
+
+         System.out.println("Enter The Numbers");
+
+                n1=Double.parseDouble(bin.readLine());
+
+                n2=Double.parseDouble(bin.readLine());
+
+           res = n1+n2;
+
+            System.out.println(res);     
+
+         }
+
+          public void and()throws IOException 
+
+             {
+
+             System.out.println("Enter The Numbers");
+
+               n1=Double.parseDouble(bin.readLine());
+
+                 n2=Double.parseDouble(bin.readLine());
+
+              res = n1*n2;
+
+            System.out.println(res);
+
+          }
+
+          public void M_add()throws IOException 
+
+             {
+
+              res1+=res;
+
+              }
+
+          public void M_sub()throws IOException 
+
+             {
+
+              res1-=res;
+
+              }
+
+          public void M_equal()throws IOException 
+
+            {
+
+            System.out.println(res1);
+
+            }
+
+}     //closing brace of class                                   
